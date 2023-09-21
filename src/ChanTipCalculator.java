@@ -12,9 +12,16 @@ public class ChanTipCalculator {
        System.out.print("What is the tip percentage? Please enter an integer!");
        int tipPercent = scan.nextInt();
        scan.nextLine();
-       int number = 0;
+       double number = 0;
+       double addAmount = 0;
        while (number != -1){
           System.out.print("Please enter the cost of one of the meals. Type -1 to stop.");
+          number = scan.nextDouble();
+          if(number != -1){
+             addAmount += number;
+          }
+          scan.nextLine();
        }
+
     }
 }
