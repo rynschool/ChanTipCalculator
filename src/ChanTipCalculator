@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class ChanTipCalculator {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Welcome to the tip calculator!");
+        System.out.print("How many people are in your group?");
+        int peopleAmount = scan.nextInt();
+        scan.nextLine();
+        System.out.print("What is the tip percentage? Please enter an integer!");
+        int tipPercent = scan.nextInt();
+        scan.nextLine();
+        double number = 0;
+        double addAmount = 0;
+        while (number != -1){
+            System.out.print("Please enter the cost of one of the meals. Type -1 to stop.");
+            number = scan.nextDouble();
+            if(number != -1){ //checks if the input is -1, if it is, it will not add -1 to the total.
+                addAmount += number;
+            }
+            scan.nextLine();
+        }
+        System.out.println("--------------------------------------------------------------------");
+        System.out.println("Total bill before tip: $" + addAmount);
+        System.out.println("Total percentage: " + tipPercent + "%");
+        double totalTip = addAmount * (tipPercent / 100.0); //divides tip percent by 100.0 to get the actual percent, as tip is entered as an int
+        System.out.println("Total tip: " + totalTip);
+        System.out.println("Total bill with tip: " + (addAmount + totalTip));
+        System.out.println("Per person cost before tip: " + (addAmount/peopleAmount));
+        System.out.println("Tip per person: " + (totalTip/peopleAmount));
+        System.out.println("Total cost per person: " + ((addAmount + totalTip)/peopleAmount));
+        System.out.println("Would you like a discount code? Answer in lowercase letters!"); //freestyle
+        String code = scan.nextLine();
+        if (code.equals("yes")){
+            System.out.print("Scanning for codes...");
+            System.out.print("Scanning for codes...");
+            System.out.print("Scanning for codes...");
+            System.out.print("Scanning for codes...");
+            System.out.print("Scanning for codes...");
+            System.out.print("No current codes!");
+        } else if (code.equals("no")){
+            System.out.print("There were never any codes >:)");
+        } else {
+            System.out.print("Answer in lowercase!");
+        }
+
+
+
+    }
+}
